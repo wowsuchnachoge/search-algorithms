@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import AStar from './AStar';
+import Graph from './Graph';
 
 function App() {
+  let searchAlgo = new AStar(null, null, 60, 150);
+  searchAlgo.randomizeWalls();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Search Algorithms</h1>
       </header>
+      <div className='action-menu'>
+      </div>
+      <div className='graph-container'>
+        <Graph searchAlgo={searchAlgo} rows={searchAlgo.rows} cols={searchAlgo.cols} />
+      </div>
     </div>
   );
 }

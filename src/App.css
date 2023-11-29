@@ -2,37 +2,41 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.graph {
+  overflow: wrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.graph-node {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  float: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.graph-node:hover {
+  background-color: aqua;
 }
 
-.App-link {
-  color: #61dafb;
+.graph-node.evaluated {
+  background-color: violet;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.graph-node.isPath {
+  background-color: cyan;
+}
+
+.graph-node.wall {
+  background-color: black;
+}
+
+.graph-node.start {
+  background-color: chartreuse;
+}
+
+.graph-node.end {
+  background-color: red;
+}
+
+.graph-node p {
+  font-size: 10px;
 }
